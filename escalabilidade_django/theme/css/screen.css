@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Delius);
+
 #blank {
     background-color: #000;
     display: none;
@@ -325,8 +327,8 @@
 .slide header:only-child h1 {
     color: #000;
     display: table-cell;
-    font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-    font-size: 72px;
+    font-family: 'Delius', cursive;
+    font-size: 82px;
     height: 700px;
     line-height: 180%;
     margin: 100px 30px;
@@ -419,7 +421,7 @@ aside.source {
 
 body {
     background: #778;
-    font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    font: 14px 'Delius', cursive;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -555,7 +557,7 @@ body.presenter_view div#current_presenter_notes section {
     background-color: #fffeff;
     color: #000;
     display: block;
-    font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    font-family: 'Delius', cursive;
     height: 120px;
     margin-left: 30px;
     margin-right: 30px;
@@ -726,7 +728,7 @@ header h6 {
 
 header:not(:only-child) {
     color: #000;
-    font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    font-family: 'Delius', cursive;
     font-size: 50px;
     font-weight: normal;
     left: 30px;
@@ -755,12 +757,23 @@ pre {
 section {
     color: #3f3f3f;
     display: block;
-    font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    font-family: 'Delius', cursive;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 100px;
     overflow: hidden;
     text-shadow: rgba(0,0,0,0.2) 0 2px 5px;
+}
+
+section img.full {
+    border-radius: 20px;
+    margin-top: auto;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 900px;
+    height: 700px;
 }
 
 section img.align-center {
