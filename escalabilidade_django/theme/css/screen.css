@@ -796,3 +796,7 @@ section img.speaker {
 section ul {
     padding-top: 60px;
 }
+
+section ul.build li {
+    display: none;
+}
