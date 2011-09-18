@@ -21,8 +21,9 @@ what the f**rancisco?
 
 .. class:: build
 
-* #cobrateam member
-* desenvolvedor @ Globo.com
+* #cobrateam
+* djangobrasil.org
+* Globo.com
 
 ---------------
 
