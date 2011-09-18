@@ -9,4 +9,4 @@ def build():
     local('landslide escalabilidade.cfg')
 
 def open():
-    local('open escalabilidade.html')
+    local('open index.html')
