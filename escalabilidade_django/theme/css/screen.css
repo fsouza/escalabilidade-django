@@ -622,6 +622,7 @@ div.slide {
     -webkit-transition: margin .25s ease-in-out;
     background: 0;
     background-color: #fff;
+    background: -webkit-gradient(linear, center bottom, center top, from(#fff), to(#999));
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
