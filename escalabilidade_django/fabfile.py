@@ -7,4 +7,6 @@ def clean():
 def build():
     clean()
     local('landslide escalabilidade.cfg')
+
+def open():
     local('open escalabilidade.html')
