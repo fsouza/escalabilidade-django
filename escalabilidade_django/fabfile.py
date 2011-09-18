@@ -41,3 +41,5 @@ def deploy():
 def undeploy():
     with cd(env.presentations_directory):
         run('rm -rf %(presentation_name)s' % env)
+
+    print 'Undeployed, the presentation is not live anymore.'
