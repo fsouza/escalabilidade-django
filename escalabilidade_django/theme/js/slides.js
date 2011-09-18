@@ -542,9 +542,24 @@ function main() {
         }
     };
 
+    var addToBuildClasses = function(document) {
+        var i, slide;
+        var slides = document.querySelectorAll('.slide');
+        for (i = 0; slide = slides[i]; i++) {
+            var item, items = slide.querySelectorAll('.build > *');
+            for (j=0; item = items[j]; j++) {
+                if (item.classList) {
+                    item.classList.add('to-build');
+                }
+            }
+        }
+    };
+
     // initialize
 
     (function() {
+        addToBuildClasses(window.document);
+
         if (window.location.hash === "") {
             currentSlideNo = 1;
         } else if (window.location.hash.indexOf("#presenter") != -1) {
