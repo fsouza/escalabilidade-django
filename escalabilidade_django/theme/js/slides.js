@@ -173,9 +173,9 @@ function main() {
         var timer = time * 1000 / 50;
         element.style.opacity = 0;
 
-        setInterval(function() {
-            if (parseFloat(element.style.opacity) >= target) {
-                clearInterval();
+        var interval = setInterval(function() {
+            if ((parseFloat(element.style.opacity)) >= target) {
+                clearInterval(interval);
             }
 
             element.style.opacity = parseFloat(element.style.opacity) + progress;
