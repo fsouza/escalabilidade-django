@@ -340,6 +340,30 @@
     width: 900px;
 }
 
+.slide.last header h1 {
+    display: table-cell;
+    font-size: 92px;
+    text-align: center;
+    width: 900px;
+}
+
+.slide.last blockquote {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
+
+.slide.last blockquote p {
+    font-size: 30px;
+}
+
+.slide.last blockquote p:first-child {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
 .slide.current {
     display: block;
     margin-left: -450px;
@@ -779,6 +803,17 @@ section img.full {
     top: 0;
     width: 900px;
     height: 700px;
+}
+
+section img.question-mark {
+    opacity: 0.4;
+    height: 500px;
+    margin: 50px 0 0 -5px;
+}
+
+section .half-screen {
+    float: left;
+    width: 200px;
 }
 
 section img.align-center {
