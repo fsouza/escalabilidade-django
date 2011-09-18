@@ -5,6 +5,7 @@ function main() {
     if (document.all) { return; }
 
     var currentSlideNo;
+    var toBuild;
     var notesOn = false;
     var expanded = false;
     var hiddenContext = false;
@@ -374,6 +375,7 @@ function main() {
                 return false;
                 break;
         }
+        return false;
     };
 
     var checkModifierKeyUp = function(event) {
@@ -454,6 +456,8 @@ function main() {
                 break;
             case 84: // t
                 showToc();
+                break;
+            default:
                 break;
         }
     };
@@ -541,7 +545,7 @@ function main() {
     // initialize
 
     (function() {
-        if (window.location.hash == "") {
+        if (window.location.hash === "") {
             currentSlideNo = 1;
         } else if (window.location.hash.indexOf("#presenter") != -1) {
             currentSlideNo = Number(window.location.hash.replace('#presenter', ''));
