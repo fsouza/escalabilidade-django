@@ -19,7 +19,7 @@ what the f**rancisco?
    :class: child-speaker
    :align: right
 
-.. class:: build
+.. class:: build half-screen
 
 * djangobrasil.org
 * Globo.com
@@ -55,3 +55,17 @@ projetos open source, com diversos colaboradores.
 
 Dúvidas?
 ========
+
+.. image:: img/question-mark.png
+   :class: question-mark
+
+
+---
+
+    Francisco Souza
+
+    `@franciscosouza <http://twitter.com/franciscosouza>`_
+
+    f@souza.cc
+
+    `f.souza.cc <http://f.souza.cc>`_
