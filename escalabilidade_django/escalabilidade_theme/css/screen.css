@@ -780,12 +780,12 @@ section img.align-right {
     margin-right: 0;
 }
 
-section img.child-presenter {
+section img.child-speaker {
     border-radius: 4px;
     -webkit-transform: rotate(-20deg);
 }
 
-section img.presenter {
+section img.speaker {
     -webkit-transform: rotate(3deg);
     border-radius: 8px;
     position: absolute;
