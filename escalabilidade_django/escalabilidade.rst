@@ -27,5 +27,10 @@ what the f**rancisco?
 
 ---------------
 
+.. image:: img/cobrateam.jpg
+   :class: full
+
+---------------
+
 Dúvidas?
 ========
