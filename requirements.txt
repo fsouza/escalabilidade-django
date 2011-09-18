@@ -1,0 +1,8 @@
+Fabric==1.2.2
+Jinja2==2.6
+Markdown==2.0.3
+Pygments==1.4
+docutils==0.8.1
+landslide==1.0.0
+paramiko==1.7.7.1
+pycrypto==2.3
