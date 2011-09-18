@@ -5,7 +5,7 @@ env.user = 'xikin'
 env.presentation_name = 'escalabilidade-django'
 env.url = 'http://p.souza.cc/%(presentation_name)s' % env
 env.presentations_directory = '/home/xikin/p.souza.cc'
-env.remote_directory = '%(presentations_directory)/%(presentation_name)s' % env
+env.remote_directory = '%(presentations_directory)s/%(presentation_name)s' % env
 env.roledefs = {
     'remote' : ['p.souza.cc',],
 }
