@@ -743,7 +743,7 @@ img {
 }
 
 li {
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px 0;
 }
 
@@ -798,6 +798,6 @@ section ul {
     padding-top: 60px;
 }
 
-section ul.build li {
+section .to-build {
     opacity: 0;
 }
