@@ -781,11 +781,13 @@ section img.align-right {
 }
 
 section img.child-presenter {
+    border-radius: 4px;
     -webkit-transform: rotate(-20deg);
 }
 
 section img.presenter {
     -webkit-transform: rotate(3deg);
+    border-radius: 8px;
     position: absolute;
     right: 230px;
 }
