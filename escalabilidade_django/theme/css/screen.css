@@ -798,5 +798,5 @@ section ul {
 }
 
 section ul.build li {
-    display: none;
+    opacity: 0;
 }

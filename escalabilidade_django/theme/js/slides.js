@@ -5,7 +5,7 @@ function main() {
     if (document.all) { return; }
 
     var currentSlideNo;
-    var toBuild;
+    var toBuild = [];
     var notesOn = false;
     var expanded = false;
     var hiddenContext = false;
@@ -132,6 +132,7 @@ function main() {
         updatePresenterNotes();
 
         if (updateOther) { updateOtherPage(); }
+        updateBuild();
     };
 
     var updatePresenterNotes = function() {
@@ -165,6 +166,31 @@ function main() {
 
         var w = isPresenterView ? window.opener : presenterViewWin;
         w.postMessage('slide#' + currentSlideNo, '*');
+    };
+
+    var show = function(element, time) {
+        var progress = 0.05, target = 1.0;
+        var timer = time * 1000 / 50;
+        element.style.opacity = 0;
+
+        setInterval(function() {
+            if (parseFloat(element.style.opacity) >= target) {
+                clearInterval();
+            }
+
+            element.style.opacity = parseFloat(element.style.opacity) + progress;
+        }, timer);
+    };
+
+    var build = function() {
+        var build = toBuild.pop();
+        build.classList.remove('to-build');
+        show(build, 1);
+    };
+
+    var updateBuild = function() {
+        var slide = document.querySelector('.current');
+        toBuild = Array.prototype.slice.apply(slide.querySelectorAll('.to-build')).reverse();
     };
 
     var nextSlide = function() {
@@ -407,7 +433,11 @@ function main() {
             case 39: // right arrow
             case 32: // space
             case 34: // page down
-                nextSlide();
+                if (toBuild.length > 0) {
+                    build();
+                } else {
+                    nextSlide();
+                }
                 break;
             case 50: // 2
                 if (!modifierKeyDown) {
