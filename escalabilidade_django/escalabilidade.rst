@@ -56,12 +56,6 @@ projetos open source, com diversos colaboradores.
 Dúvidas?
 ========
 
-.. image:: img/question-mark.png
-   :class: question-mark
-
-
----
-
     Francisco Souza
 
     `@franciscosouza <http://twitter.com/franciscosouza>`_
@@ -69,3 +63,6 @@ Dúvidas?
     f@souza.cc
 
     `f.souza.cc <http://f.souza.cc>`_
+
+.. image:: img/question-mark.png
+   :class: question-mark
