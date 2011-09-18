@@ -782,6 +782,7 @@ section img.align-right {
 
 section img.child-speaker {
     border-radius: 4px;
+    float:right;
     -webkit-transform: rotate(-20deg);
 }
 
