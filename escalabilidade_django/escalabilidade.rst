@@ -1,6 +1,10 @@
 Escalabilidade em projetos Django
 =================================
 
+    Francisco Souza
+
+    @franciscosouza
+
 Presenter Notes
 ===============
 
