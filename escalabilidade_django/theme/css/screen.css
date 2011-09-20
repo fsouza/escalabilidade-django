@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Delius);
 
 #blank {
-    background-color: #000;
+    background-color: #FFF;
     display: none;
     height: 100%;
     left: 0;
@@ -324,20 +324,29 @@
     text-indent: 20px;
 }
 
-.slide header:only-child h1 {
+.slide.first h1 {
     color: #000;
     display: table-cell;
     font-family: 'Delius', cursive;
     font-size: 82px;
     height: 700px;
     line-height: 180%;
-    margin: 100px 30px;
     overflow: hidden;
-    padding: 0 80px;
+    padding: 60px 80px;
     text-align: center;
     text-shadow: rgba(0,0,0,0.2) 0 2px 5px;
-    vertical-align: middle;
     width: 900px;
+}
+
+.slide.first blockquote {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
+
+.slide.first blockquote > p {
+    font-size: 30px;
 }
 
 .slide.last header h1 {
@@ -430,9 +439,9 @@ aside {
 }
 
 aside.page_number {
-    bottom: 6px;
+    bottom: 20px;
     position: absolute;
-    right: 10px;
+    left: 20px;
     text-indent: 10px;
 }
 
@@ -649,7 +658,7 @@ div.slide {
     -webkit-transition: margin .25s ease-in-out;
     background: 0;
     background-color: #fff;
-    background: -webkit-gradient(linear, center bottom, center top, from(#fff), to(#999));
+    /* background: -webkit-gradient(linear, center bottom, center top, from(#fff), to(#999)); */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
