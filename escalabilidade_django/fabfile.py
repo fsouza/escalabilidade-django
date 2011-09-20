@@ -37,7 +37,7 @@ def compress():
 def package():
     build()
     compress()
-    with lcd('/tmp/escalabilidade'):
+    with lcd(env.tmp_dir):
         local('tar -czvf /tmp/escalabilidade.tar.gz img index.html theme')
 
 @roles('remote')
@@ -51,6 +51,8 @@ def deploy():
         run('tar -xvzf escalabilidade.tar.gz')
         run('rm -f escalabilidade.tar.gz')
 
+
+    local('rm -rf /tmp/escalabilidade*')
     print 'Deployed, check this out: %(url)s' % env
 
 @roles('remote')
