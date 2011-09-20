@@ -453,7 +453,9 @@ aside.source {
 }
 
 body {
-    background: #778;
+    background-color: #CC00CC;
+    background-image: -webkit-gradient(radial, 50% 50%, 100, 50% 50%, 600, from(#fff), to(#f60));
+    background-attachment: fixed;
     font: 14px 'Delius', cursive;
     margin: 0;
     overflow: hidden;
