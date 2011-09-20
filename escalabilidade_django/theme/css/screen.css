@@ -389,6 +389,18 @@
     line-height: 30px;
 }
 
+.slide .subtitle {
+    background: rgba(255, 255, 255, .5);
+    color: #000;
+    display: block;
+    font-size: 36px;
+    padding: 10px 50px;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 900px;
+}
+
 .slide.current {
     display: block;
     margin-left: -450px;
@@ -728,7 +740,7 @@ div.slides.nocontext {
 
 header h1 {
     display: inline;
-    font-size: 100%;
+    font-size: 80px;
     font-weight: normal;
     margin: 0;
     padding: 0;
