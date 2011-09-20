@@ -324,6 +324,22 @@
     text-indent: 20px;
 }
 
+.slide header:only-child h1 {
+    color: #000;
+    display: table-cell;
+    font-family: 'Delius', cursive;
+    font-size: 120px;
+    height: 700px;
+    line-height: 180%;
+    margin: 100px 30px;
+    overflow: hidden;
+    padding: 0 80px;
+    text-align: center;
+    text-shadow: rgba(0,0,0,1) 0 2px 5px;
+    vertical-align: middle;
+    width: 900px;
+}
+
 .slide.first h1 {
     color: #000;
     display: table-cell;
