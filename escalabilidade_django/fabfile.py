@@ -23,13 +23,14 @@ def open():
 
 def compress():
     local('mkdir -p %s' % env.tmp_dir)
-    local('cp -r * %s' % env.tmp_dir)
+    local('cp -rv * %s' % env.tmp_dir)
     with lcd(env.tmp_dir):
         local('pyminify index.html > index_minified.html')
         local('mv index_minified.html index.html')
         local('java -jar yuicompressor.jar theme/css/screen.css > theme/css/screen-minified.css')
         local('java -jar yuicompressor.jar theme/css/print.css > theme/css/print-minified.css')
         local('java -jar yuicompressor.jar theme/js/slides.js > theme/js/slides-minified.js')
+        local('java -jar yuicompressor.jar theme/js/init.ga.js >> theme/js/slides-minified.js')
         local('sed -i old "s/screen\.css/screen-minified.css/g" index.html')
         local('sed -i old "s/print\.css/print-minified.css/g" index.html')
         local('sed -i old "s/slides\.js/slides-minified.js/g" index.html')
