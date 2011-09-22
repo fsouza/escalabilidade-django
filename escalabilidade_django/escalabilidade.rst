@@ -89,6 +89,28 @@ Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 ---------------
 
+O mito da escalabilidade
+========================
+
+* Escalabilidade é independente da tecnologia (linguagem, framework ,etc.)
+
+.fx: build-code
+
+.. sourcecode:: go
+
+    func WriteToFileHandler(w http.ResponseWriter, r *http.Request) {
+        ioutil.WriteFile("file.txt", r.RawURL)
+        w.Write("Ok")
+    }
+
+Presenter Notes
+===============
+
+Escalabilidade não está relacionado à tecnologia. O mesmo código do slide anterior transcrito
+em uma linguagem estática. O código roda **MUITO** mais rápido, mas é tão escalável quanto o outro.
+
+---------------
+
 Escalabilidade
 ==============
 
