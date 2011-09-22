@@ -8,7 +8,7 @@ env.presentations_directory = '/home/xikin/p.souza.cc'
 env.tmp_dir = '/tmp/escalabilidade'
 env.remote_directory = '%(presentations_directory)s/%(presentation_name)s' % env
 env.roledefs = {
-    'remote' : ['p.souza.cc',],
+    'remote' : ['f.souza.cc',],
 }
 
 def clean():
