@@ -825,9 +825,9 @@ pre {
     font-family: Monaco, Courier, monospace;
     font-size: 16px;
     left: 70px;
+    margin-top: 40px;
     padding: 10px;
     position: absolute;
-    top: 350px;
     width: 750px;
 }
 
