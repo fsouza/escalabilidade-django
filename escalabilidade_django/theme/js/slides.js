@@ -182,10 +182,15 @@ function main() {
         }, timer);
     };
 
-    var build = function() {
+    var build = function(postAnother) {
         var build = toBuild.pop();
         build.classList.remove('to-build');
         show(build, 1);
+
+        var w = isPresenterView ? window.opener : presenterViewWin;
+        if (postAnother && w) {
+            w.postMessage('build', '*');
+        }
     };
 
     var updateBuild = function() {
@@ -434,7 +439,7 @@ function main() {
             case 32: // space
             case 34: // page down
                 if (toBuild.length > 0) {
-                    build();
+                    build(true);
                 } else {
                     nextSlide();
                 }
@@ -510,9 +515,12 @@ function main() {
 
     var addRemoteWindowControls = function() {
         window.addEventListener("message", function(e) {
-            if (e.data.indexOf("slide#") != -1) {
-                    currentSlideNo = Number(e.data.replace('slide#', ''));
+            var data = e.data;
+            if (data.indexOf("slide#") != -1) {
+                    currentSlideNo = Number(data.replace('slide#', ''));
                     updateSlideClasses(false);
+            } else if (data == "build") {
+                build(false);
             }
         }, false);
     };
