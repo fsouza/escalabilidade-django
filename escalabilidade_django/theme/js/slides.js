@@ -572,17 +572,22 @@ function main() {
         }
     };
 
-    var addToBuildClasses = function(document) {
-        var i, slide;
-        var slides = document.querySelectorAll('.slide');
+    var addToBuildClassToChildren = function(itemSelector, childrenSelector) {
+        var i, slide, item, items;
+        var slides = document.querySelectorAll(itemSelector);
         for (i = 0; slide = slides[i]; i++) {
-            var item, items = slide.querySelectorAll('.build > *');
+            items = slide.querySelectorAll(childrenSelector);
             for (j=0; item = items[j]; j++) {
                 if (item.classList) {
                     item.classList.add('to-build');
                 }
             }
         }
+    };
+
+    var addToBuildClasses = function(document) {
+        addToBuildClassToChildren('.slide', '.build > *');
+        addToBuildClassToChildren('.slide.build-code', 'pre');
     };
 
     // initialize
