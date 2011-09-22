@@ -251,6 +251,40 @@ Presenter Notes
 ===============
 
 Uma excelente ferramenta para geração de conteúdo estático é o staticgenerator.
+(Explicação rápida da imagem)
+
+---------------
+
+E se...
+=======
+
+.. image:: img/post-comentar.png
+   :class: align-center to-build
+
+Presenter Notes
+===============
+
+Mas e se o usuário fizer mil requisições do tipo POST? Não da pra botar uma página estática
+pra responder por uma requisição POST. E se você recebe 1000 posts com 100Kb cada um a cada
+segundo? O que vocês sugerem para solucionar o problema?
+
+---------------
+
+Deixe pra depois!
+=================
+
+.. class:: build
+
+* `Celery <http://celeryproject.org/>`_
+* `django-ztask <https://github.com/dmgctrl/django-ztask>`_
+* `ActiveMQ <http://activemq.apache.org/>`_
+
+Presenter Notes
+===============
+
+Neste caso você pode usar o recurso de filas. Existem algumas ferramentas
+relativamente famosas para enfileirar ações, para que elas sejam executadas
+de forma assíncrona.
 
 ---------------
 
