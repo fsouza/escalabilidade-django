@@ -401,9 +401,23 @@
     width: 900px;
 }
 
+.slide .origin a {
+    border-bottom: none;
+    color: #000;
+    font-size: 12px;
+    font-style: italic;
+    left: 18px;
+    position: absolute;
+    top: 8px;
+}
+
 .slide.current {
     display: block;
     margin-left: -450px;
+}
+
+.slide.centered-section section {
+    text-align: center;
 }
 
 .slide.far-future {
@@ -880,6 +894,10 @@ section img.align-right {
     display: block;
     margin-left: auto;
     margin-right: 0;
+}
+
+section img.away-from-top {
+    margin-top: 100px;
 }
 
 section img.child-speaker {
