@@ -65,8 +65,8 @@ projetos open source, com diversos colaboradores.
 
 ---------------
 
-O mito da escalabilidade
-========================
+Mito da escalabilidade
+======================
 
 * Escalabilidade não é rodar rápido
 
@@ -89,8 +89,8 @@ Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 ---------------
 
-O mito da escalabilidade
-========================
+Mito da escalabilidade
+======================
 
 * Escalabilidade é independente da tecnologia (linguagem, framework ,etc.)
 
@@ -131,6 +131,66 @@ ecalar.
 
 ---------------
 
+Escalabilidade vertical
+=======================
+
+.. class:: build
+
+* Uma grande caixa (uma máquina)
+* A caixa cresce à medida que a aplicação evolui
+* Substituição de hardware
+
+.. image:: img/escalabilidade-vertical.jpg
+
+Presenter Notes
+===============
+
+Antes de vermos como escalar aplicações Django, precisamos diferenciar os tipos de
+escalabilidade. A escalabilidade vertical é quando temos uma máquina, uma grande caixa
+que cresce à medida que a aplicação cresce. Precisa de processamento? Compre um processador
+melhor (ou adicione outro à máquina). Mais memória? Compre outro pente! Mais storage? Compre
+outro disco. Sua máquina pifou? Senta e chora.
+
+---------------
+
+Escalabilidade horizontal
+=========================
+
+.. class:: build
+
+* Várias máquinas com a mesma configuração (ou não)
+* Redundância
+* Fácil de escalar
+* Adição de hardware
+
+.. image:: img/escalabilidade-horizontal.jpg
+   :class: align-center
+
+Presenter Notes
+===============
+
+Por outro lado temos a escalabilidade horizontal, que é baseada no princípio
+de ter múltiplos hardwares respondendo. Você pode adicionar novos hardwares que
+custem barato, ao invés de sempre comprar hardware mais caro e poderoso.
+
+---------------
+
+O que você prefere?
+===================
+
+.. class:: build
+
+* 1 hardware de 100 milhões de reais
+* 100 hardwares de 1 milhão de reais
+
+Presenter Notes
+===============
+
+O que você prefere: um hardware de 100 milhões de reais ou cem hardwares de 1
+milhão de reais?
+
+---------------
+
 .. image:: img/escalando.jpg
    :class: full
 
@@ -138,15 +198,59 @@ ecalar.
 
 Escalando aplicações Django
 
+.. class:: origin
+
+http://www.flickr.com/photos/javifalces/3238781665
+
 ---------------
 
-Escalabilidade vertical
-=======================
+Caching
+=======
+
+Presenter Notes
+===============
+
+Vamos ver agora algumas técnicas de cacheamento em vários níveis.
 
 ---------------
 
-Escalabilidade horizontal
-=========================
+Dinâmico x Estático
+===================
+
+Conteúdo que não é dinâmico não precisa ser servido dinamicamente.
+
+.. class:: build
+
+* Blogs
+* Sites de notícias
+
+Presenter Notes
+===============
+
+Uma forma de cache é gerar estaticamente o conteúdo. Certos sites não precisam
+que o conteúdo seja consumido dinamicamente, como blogs e sites de notícias.
+
+---------------
+
+staticgenerator
+===============
+
+.fx: build-code
+
+.. image:: img/static-generator.jpg
+   :class: align-center
+
+.. sourcecode:: python
+
+    from staticgenerator import quick_publish
+
+    quick_publish('/escalando-django.html')
+
+
+Presenter Notes
+===============
+
+Uma excelente ferramenta para geração de conteúdo estático é o staticgenerator.
 
 ---------------
 
