@@ -65,25 +65,27 @@ projetos open source, com diversos colaboradores.
 
 ---------------
 
-Escalabilidade vs Performance
-=============================
+O mito da escalabilidade
+========================
+
+* Escalabilidade não é rodar rápido
+
+.fx: build-code
+
+.. sourcecode:: python
+
+    def write_to_file(request):
+        fp = open('file.txt', 'w')
+        fp.write(request.path)
+        fp.close()
+
+        return HttpResponse("Ok")
 
 Presenter Notes
 ===============
 
-Aqui chegamos a um ponto: precisamos diferenciar escalabilidade de performance!
-
----------------
-
-Performance
-===========
-
-Rodar rápido :)
-
-Presenter Notes
-===============
-
-Alguém discorda que performance == rodar rápido?
+Escalabilidade não é perfomance. Alguém duvida que o código dessa view roda rápido?
+Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 ---------------
 
@@ -113,6 +115,16 @@ ecalar.
 .. class:: subtitle
 
 Escalando aplicações Django
+
+---------------
+
+Escalabilidade vertical
+=======================
+
+---------------
+
+Escalabilidade horizontal
+=========================
 
 ---------------
 
