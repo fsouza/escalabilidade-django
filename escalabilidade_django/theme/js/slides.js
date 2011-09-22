@@ -492,31 +492,6 @@ function main() {
         }
     };
 
-    var handleWheel = function(event) {
-        if (tocOpened || helpOpened || overviewActive) {
-            return;
-        }
-
-        var delta = 0;
-
-        if (!event) {
-            event = window.event;
-        }
-
-        if (event.wheelDelta) {
-            delta = event.wheelDelta/120;
-            if (window.opera) delta = -delta;
-        } else if (event.detail) {
-            delta = -event.detail/3;
-        }
-
-        if (delta && delta <0) {
-            nextSlide();
-        } else if (delta) {
-            prevSlide();
-        }
-    };
-
     var addSlideClickListeners = function() {
         for (var i=0; i < slides.length; i++) {
             var slide = slides.item(i);
@@ -610,9 +585,7 @@ function main() {
         document.addEventListener('keyup', checkModifierKeyUp, false);
         document.addEventListener('keydown', handleBodyKeyDown, false);
         document.addEventListener('keydown', checkModifierKeyDown, false);
-        document.addEventListener('DOMMouseScroll', handleWheel, false);
 
-        window.onmousewheel = document.onmousewheel = handleWheel;
         window.onresize = expandSlides;
 
         for (var i = 0, el; el = slides[i]; i++) {
