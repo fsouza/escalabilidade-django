@@ -701,8 +701,8 @@ div.slide {
     -webkit-border-top-right-radius: 20px;
     -webkit-transition: margin .25s ease-in-out;
     background: 0;
-    background-color: #fff;
-    /* background: -webkit-gradient(linear, center bottom, center top, from(#fff), to(#999)); */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* background: -webkit-gradient(linear, left bottom, right top, from(#ddd), to(#fff)); */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;

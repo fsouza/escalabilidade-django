@@ -140,7 +140,7 @@ Escalabilidade vertical
 * A caixa cresce à medida que a aplicação evolui
 * Substituição de hardware
 
-.. image:: img/escalabilidade-vertical.jpg
+.. image:: img/escalabilidade-vertical.png
 
 Presenter Notes
 ===============
@@ -163,7 +163,7 @@ Escalabilidade horizontal
 * Fácil de escalar
 * Adição de hardware
 
-.. image:: img/escalabilidade-horizontal.jpg
+.. image:: img/escalabilidade-horizontal.png
    :class: align-center
 
 Presenter Notes
@@ -237,7 +237,7 @@ staticgenerator
 
 .fx: build-code
 
-.. image:: img/static-generator.jpg
+.. image:: img/static-generator.png
    :class: align-center
 
 .. sourcecode:: python
@@ -285,6 +285,31 @@ Presenter Notes
 Neste caso você pode usar o recurso de filas. Existem algumas ferramentas
 relativamente famosas para enfileirar ações, para que elas sejam executadas
 de forma assíncrona.
+
+---------------
+
+.. image:: img/camadas.jpg
+   :class: full
+
+.. class:: subtitle
+
+Camadas de cache no Django
+
+.. class:: origin
+
+http://www.flickr.com/photos/rvoegtli/5688343678/
+
+---------------
+
+De cima pra baixo...
+====================
+
+.. class:: build
+
+- site caching
+- view caching
+- template fragment caching
+- 
 
 ---------------
 
