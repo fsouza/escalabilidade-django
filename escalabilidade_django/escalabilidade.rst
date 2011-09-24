@@ -309,7 +309,23 @@ De cima pra baixo...
 - site caching
 - view caching
 - template fragment caching
-- 
+- object caching
+
+Presenter Notes
+===============
+
+Em ordem descendente, da forma mais abrangente para a mais abrangente temos
+o caching por site, onde todo o site é cacheado, por view, onde o resultado de uma view
+é cacheada (o objeto HttpResponse), o cache de fragmentos do template e o cache de objetos
+individuais. O ideal para páginas muito dinâmicas é o object caching, mas tem um problema...
+
+---------------
+
+.fx: quote
+
+    "There are only two hard things in Computer Science: cache invalidation and naming things"
+
+    -- Phil Karlton
 
 ---------------
 
