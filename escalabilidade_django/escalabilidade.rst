@@ -278,6 +278,7 @@ Deixe pra depois!
 * `Celery <http://celeryproject.org/>`_
 * `django-ztask <https://github.com/dmgctrl/django-ztask>`_
 * `ActiveMQ <http://activemq.apache.org/>`_
+* `ØMQ <http://www.zeromq.org/>`_
 
 Presenter Notes
 ===============
@@ -326,6 +327,95 @@ individuais. O ideal para páginas muito dinâmicas é o object caching, mas tem
     "There are only two hard things in Computer Science: cache invalidation and naming things"
 
     -- Phil Karlton
+
+---------------
+
+Backends de cache
+=================
+
+.. class:: build
+
+* banco de dados
+* sistema de arquivos
+* locmem
+* DummyCache
+* memcached
+
+Presenter Notes
+===============
+
+Hora de conhecer alguns dos backends de cache que já vêm no Django. É possível fazer cache no banco de dados (???),
+no sistema de arquivos do sistema operacional. O locmem é para memória local do processo, há problemas em usá-lo, uma vez
+que o gerenciamento é feito por processo. Se no mesmo computador você rodar 4 instâncias do gunicorn, por exemplo, cada um
+terá seu próprio cache. Por último, há ou o memcached. Além disso, há aplicações de terceiros para caching.
+
+---------------
+
+memcached
+=========
+
+Presenter Notes
+===============
+
+Só tenho uma coisa a dizer: use memcached :)
+
+---------------
+
+Cache além do Django
+====================
+
+.. class:: build
+
+* Varnish/squid
+* nginx
+
+Presenter Notes
+===============
+
+Além disso, também há a possibilidade de instalar uma camada de cache àfrente da aplicação, usando
+o varnish ou o squid, e ainda usar o nginx como frontend e proxy reverso.
+
+---------------
+
+Sessão
+======
+
+---------------
+
+Backends de sessão
+==================
+
+.. class:: build
+
+* banco de dados
+* sistema de arquivos
+* memcached
+
+Presenter Notes
+===============
+
+
+
+---------------
+
+Sessão (third party)
+====================
+
+.. class:: build
+
+* redis
+* MongoDB
+* Tokyo Cabinet
+
+---------------
+
+O que usar?
+===========
+
+.. class:: build
+
+- Avalie o quanto você precisa da sessão
+- Se você precisar muito, não use o banco de dados
 
 ---------------
 
