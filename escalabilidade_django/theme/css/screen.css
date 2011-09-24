@@ -389,6 +389,22 @@
     line-height: 30px;
 }
 
+.slide.quote blockquote {
+    margin-top: 30px;
+}
+
+.slide.quote blockquote p:first-child {
+    font-size: 60px;
+    font-style: italic;
+    text-align: center;
+}
+
+.slide.quote blockquote p:last-child {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    text-align: right;
+}
+
 .slide .subtitle {
     background: rgba(255, 255, 255, .5);
     color: #000;
