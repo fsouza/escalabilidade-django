@@ -380,6 +380,12 @@ o varnish ou o squid, e ainda usar o nginx como frontend e proxy reverso.
 Sessão
 ======
 
+Presenter Notes
+===============
+
+Um outro ponto sobre escalabilidade são as sessões: onde persistir
+os dados do usuário?
+
 ---------------
 
 Backends de sessão
@@ -394,7 +400,9 @@ Backends de sessão
 Presenter Notes
 ===============
 
-
+O Django também conta com backends de sessão e usa, por padrão, o banco de dados.
+Mas existem alternativas, da mesma forma que acontece com os backends de cache, também
+é possível botar a sessão do Django no sistema de arquivos e no memcached.
 
 ---------------
 
@@ -407,15 +415,22 @@ Sessão (third party)
 * MongoDB
 * Tokyo Cabinet
 
+Presenter Notes
+===============
+
+Além disso, há alguns backends de terceiros bastante conhecidos, principalmente o redis.
+Há ainda a possibilidade de usar o MongoDB como backend de sessão (ou como banco de dados),
+e ainda usar o Tokyo Cabinet, uma implementação do DBM.
+
 ---------------
 
 O que usar?
 ===========
 
-.. class:: build
+Presenter Notes
+===============
 
-- Avalie o quanto você precisa da sessão
-- Se você precisar muito, não use o banco de dados
+Avalie o quanto você precisa da sessão. Se você precisar muito, use a memória.
 
 ---------------
 
