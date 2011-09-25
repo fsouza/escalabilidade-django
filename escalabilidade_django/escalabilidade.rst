@@ -354,6 +354,19 @@ terá seu próprio cache. Por último, há ou o memcached. Além disso, há apli
 memcached
 =========
 
+.. sourcecode:: python
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+            'LOCATION': [
+                '10.0.2.1:11211',
+                '10.0.2.4:11211',
+                '10.0.2.7:11211',
+            ]
+        }
+    }
+
 Presenter Notes
 ===============
 
