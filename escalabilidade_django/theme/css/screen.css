@@ -390,7 +390,7 @@
 }
 
 .slide.quote blockquote {
-    margin-top: 30px;
+    margin-top: -30px;
 }
 
 .slide.quote blockquote p:first-child {
