@@ -861,6 +861,10 @@ pre {
     width: 750px;
 }
 
+section > pre:only-child {
+    margin-top: 80px;
+}
+
 section {
     color: #3f3f3f;
     display: block;
