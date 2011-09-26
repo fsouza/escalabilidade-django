@@ -905,12 +905,6 @@ section img.full {
     height: 700px;
 }
 
-section img.question-mark {
-    opacity: 0.4;
-    height: 500px;
-    margin: 50px 0 0 -5px;
-}
-
 section .half-screen {
     float: left;
     width: 200px;
