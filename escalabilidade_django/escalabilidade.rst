@@ -447,6 +447,125 @@ Avalie o quanto você precisa da sessão. Se você precisar muito, use a memóri
 
 ---------------
 
+Banco de dados
+==============
+
+Presenter Notes
+===============
+
+bla
+
+---------------
+
+Otimizando o código...
+======================
+
+Presenter Notes
+===============
+
+bla!
+
+---------------
+
+.. image:: img/decide.jpg
+   :class: full
+
+.. class:: subtitle right big
+
+Se decide!
+
+.. class:: origin bottom
+
+http://www.flickr.com/photos/josemanuelerre/5128402263/
+
+---------------
+
+Mito da escalabilidade
+======================
+
+* Escalabilidade não é rodar rápido
+
+.. sourcecode:: python
+
+    def write_to_file(request):
+        fp = open('file.txt', 'w')
+        fp.write(request.path)
+        fp.close()
+
+        return HttpResponse("Ok")
+
+Presenter Notes
+===============
+
+No começo da palestra eu deixei claro que escalabilidade não é rodar rápido, não é
+bom desempenho. Mas é certo que um bom desempenho te ajuda a escalar mais fácil. Como
+otimizar um código então?
+
+----------------
+
+Benchmarking
+============
+
+.. class:: build
+
+* `Apache benchmarking (ab) <http://httpd.apache.org/docs/2.0/programs/ab.html>`_
+* `Funkload <http://funkload.nuxeo.org/>`_
+* `JMeter <http://jakarta.apache.org/jmeter/>`_
+
+Presenter Notes
+===============
+
+----------------
+
+Profiling
+=========
+
+.fx: build-code
+
+.. class:: build
+
+- Uso do ``cProfile``, módulo da biblioteca padrão do Python
+- É capaz de gerar um relatório sobre a execução de uma função
+
+.. sourcecode:: python
+
+    import cProfile
+    cProfile.run('is_prime(982451653)')
+
+Presenter Notes
+===============
+
+----------------
+
+Profiling
+=========
+
+.. sourcecode:: text
+
+             5 function calls in 0.003 seconds
+
+       Ordered by: standard name
+
+       ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+            1    0.000    0.000    0.003    0.003 <string>:1(<module>)
+            1    0.003    0.003    0.003    0.003 profiling.py:6(is_prime)
+            1    0.000    0.000    0.000    0.000 {isinstance}
+            1    0.000    0.000    0.000    0.000 {math.sqrt}
+            1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+Presenter Notes
+===============
+
+----------------
+
+cProfile + RequestFactory
+=========================
+
+Presenter Notes
+===============
+
+----------------
+
 Dúvidas?
 ========
 
@@ -457,6 +576,3 @@ Dúvidas?
     f@souza.cc
 
     `f.souza.cc <http://f.souza.cc>`_
-
-.. image:: img/question-mark.png
-   :class: question-mark
