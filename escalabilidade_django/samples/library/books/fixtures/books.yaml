@@ -1,0 +1,137 @@
+- model: books.Book
+  pk: 1
+  fields:
+    title: "Go Programming"
+    author: John P. Baugh
+
+- model: books.Book
+  pk: 2
+  fields:
+    title: "sed & awk (2nd Edition)"
+    author: Dale Dougherty
+
+- model: books.Book
+  pk: 3
+  fields:
+    title: "Seven Languages in Seven Weeks"
+    author: Bruce A. Tate
+
+- model: books.Book
+  pk: 4
+  fields:
+    title: "The Linux Programming Interface: A Linux and UNIX System Programming Handbook"
+    author: Michael Kerrisk
+
+- model: books.Book
+  pk: 5
+  fields:
+    title: "The Architecture of Open Source Applications"
+    author: Robert Chansler
+
+- model: books.Book
+  pk: 6
+  fields:
+    title: "The Art of UNIX Programming"
+    author: Eric S. Raymond
+
+- model: books.Book
+  pk: 7
+  fields:
+    title: "Building Scalable Web Sites"
+    author: Cal Henderson
+
+- model: books.Book
+  pk: 8
+  fields:
+    title: "The Cathedral & the Bazaar"
+    author: Eric S. Raymond
+
+- model: books.Book
+  pk: 9
+  fields:
+    title: "flex & bison"
+    author: John Levine
+
+- model: books.Book
+  pk: 10
+  fields:
+    title: "Growing Object-Oriented Software, Guided by Tests"
+    author: Steve Freeman, Nat Pryce
+
+- model: books.Book
+  pk: 11
+  fields:
+    title: "Learning Perl"
+    author: Brian d foy, Randal L. Schwartz, Tom Phoenix
+
+- model: books.Book
+  pk: 12
+  fields:
+    title: "Learning SPARQL"
+    author: Bob DuCharme
+
+- model: books.Book
+  pk: 13
+  fields:
+    title: "Programming the Semantic Web"
+    author: Colin Evans, Toby Segaran, Jamie Taylor
+
+- model: books.Book
+  pk: 14
+  fields:
+    title: "C Programming Language (2nd Edition)"
+    author: Brian W. Kernighan, Dennis M. Ritchie
+
+- model: books.Book
+  pk: 15
+  fields:
+    title: "How to Think Like a Computer Scientist: Learning with Python"
+    author: Allen Downey
+
+- model: books.Book
+  pk: 16
+  fields:
+    title: "JavaScript Patterns"
+    author: Stoyan Stefanov
+
+- model: books.Book
+  pk: 17
+  fields:
+    title: "JavaScript: The Good Parts"
+    author: Douglas Crockford
+
+- model: books.Book
+  pk: 18
+  fields:
+    title: "C++ Programming Language, The (3rd Edition)"
+    author: Bjarne Stroustrup
+
+- model: books.Book
+  pk: 19
+  fields:
+    title: "Cassandra: The Definitive Guide"
+    author: Eben Hewitt
+
+- model: books.Book
+  pk: 20
+  fields:
+    title: "REST in Practice: Hypermedia and Systems Architecture"
+    author: Savas Parastatidis, Jim Webber, Ian Robinson
+
+- model: books.Book
+  pk: 21
+  fields:
+    title: "Scalable Internet Architectures"
+    author: Theo Schlossnagle
+
+- model: books.Book
+  pk: 22
+  fields:
+    title: "Twisted Network Programming Essentials"
+    author: Abe Fettig
+
+- model: books.Book
+  pk: 23
+  fields:
+    title: "High Performance Web Sites: Essential Knowledge for Front-End Engineers"
+    author: Steve Souders
