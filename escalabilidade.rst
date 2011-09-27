@@ -99,8 +99,10 @@ Mito da escalabilidade
 .. sourcecode:: go
 
     func WriteToFileHandler(w http.ResponseWriter, r *http.Request) {
-        ioutil.WriteFile("file.txt", r.RawURL)
-        w.Write("Ok")
+        f, _ := os.Create("file.txt")
+        defer f.Close()
+        io.WriteString(f, r.RawURL)
+        io.WriteString(w, "Ok")
     }
 
 Presenter Notes
