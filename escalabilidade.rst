@@ -558,11 +558,107 @@ Presenter Notes
 
 ----------------
 
-cProfile + RequestFactory
-=========================
+Profile no Django
+=================
 
 Presenter Notes
 ===============
+
+----------------
+
+cProfile + RequestFactory
+=========================
+
+.. sourcecode:: python
+
+    import cProfile
+
+    from django.test.client import RequestFactory
+
+    from books.views import list_books
+
+    factory = RequestFactory()
+
+    request = factory.get('/books')
+    profile = cProfile.Profile()
+    profile.runcall(list_books, request)
+    profile.print_stats()
+
+----------------
+
+Código da view
+==============
+
+.. sourcecode:: python
+
+    def list_books(request):
+        books = Book.objects.all()
+        return TemplateResponse(request, "books_list.html", locals())
+
+----------------
+
+ProfileMiddleware
+=================
+
+.. sourcecode:: python
+
+    class ProfileMiddleware(object):
+
+        def process_request(self, request):
+            if settings.DEBUG and 'prof' in request.GET:
+                self.prof = cProfile.Profile()
+
+        def process_view(self, request, callback, callback_args, callback_kwargs):
+            if settings.DEBUG and 'prof' in request.GET:
+                return self.prof.runcall(callback, request, *callback_args, **callback_kwargs)
+
+        def process_response(self, request, response):
+            if settings.DEBUG and 'prof' in request.GET:
+                self.prof.disable()
+                prof_out = StringIO()
+                old_stdout = sys.stdout
+                sys.stdout = prof_out
+
+        [...]
+
+.. class:: origin bottom
+
+http://djangosnippets.org/snippets/186/
+
+----------------
+
+.fx: big-code
+
+.. sourcecode:: text
+
+             36 function calls in 0.000 seconds
+
+       Ordered by: standard name
+
+       ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+            1    0.000    0.000    0.000    0.000 Cookie.py:578(__init__)
+            1    0.000    0.000    0.000    0.000 __init__.py:487(__init__)
+            3    0.000    0.000    0.000    0.000 __init__.py:517(_convert_to_ascii)
+            1    0.000    0.000    0.000    0.000 __init__.py:532(__setitem__)
+            2    0.000    0.000    0.000    0.000 datastructures.py:105(__new__)
+            2    0.000    0.000    0.000    0.000 datastructures.py:110(__init__)
+            2    0.000    0.000    0.000    0.000 functional.py:274(__getattr__)
+            1    0.000    0.000    0.000    0.000 manager.py:107(get_query_set)
+            1    0.000    0.000    0.000    0.000 manager.py:116(all)
+            1    0.000    0.000    0.000    0.000 manager.py:209(__get__)
+            1    0.000    0.000    0.000    0.000 query.py:31(__init__)
+            1    0.000    0.000    0.000    0.000 query.py:99(__init__)
+            1    0.000    0.000    0.000    0.000 response.py:125(__init__)
+            1    0.000    0.000    0.000    0.000 response.py:9(__init__)
+            2    0.000    0.000    0.000    0.000 tree.py:18(__init__)
+            1    0.000    0.000    0.000    0.000 views.py:7(list_books)
+            2    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x10017ef00}
+            2    0.000    0.000    0.000    0.000 {getattr}
+            5    0.000    0.000    0.000    0.000 {isinstance}
+            1    0.000    0.000    0.000    0.000 {locals}
+            1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+            2    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+            1    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
 
 ----------------
 
