@@ -763,6 +763,10 @@ div.slide p.notes {
     font-size: 90%;
 }
 
+div.slide.big-code pre {
+    margin-top: -85px;
+}
+
 div.slides {
     display: block;
     height: 100%;
