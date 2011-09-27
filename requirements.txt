@@ -11,3 +11,4 @@ docutils==0.8.1
 landslide==1.0.0
 paramiko==1.7.7.1
 pycrypto==2.3
+MySQL-python==1.2.3
