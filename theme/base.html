@@ -81,11 +81,16 @@
                     <div class="slide{% if slide.classes %}{% for class in slide.classes %} {{ class }}{% endfor %}{% endif %}{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">
                         <div class="inner">
                             {% if slide.header %}
-                                <header>{{ slide.header }}</header>
+                                <header {% if not slide.content %}class="alone"{% endif %}>{{ slide.header }}</header>
                             {% endif %}
                             {% if slide.content %}
                                 <section>{{ slide.content }}</section>
                             {% endif %}
+                            <footer>
+                                <img src="img/globo.png" alt="globo.com" height="30" width="53" />
+                                <img src="img/cobrateam.png" alt="cobrateam" height="50" width="145" class="centralized-image" />
+                                <img src="img/python-brasil.png" alt="PythonBrasil" height="30" width="120" />
+                            </footer>
                         </div>
                         <div class="presenter_notes">
                             <header><h1>Presenter Notes</h1></header>

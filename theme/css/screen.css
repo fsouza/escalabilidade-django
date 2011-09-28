@@ -322,7 +322,7 @@
     text-indent: 20px;
 }
 
-.slide header:only-child h1 {
+.slide header.alone h1 {
     color: #000;
     display: table-cell;
     font-family: 'Delius', cursive;
@@ -331,10 +331,9 @@
     line-height: 180%;
     margin: 100px 30px;
     overflow: hidden;
-    padding: 0 80px;
+    padding: 150px 80px 0;
     text-align: center;
     text-shadow: rgba(0,0,0,1) 0 2px 5px;
-    vertical-align: middle;
     width: 900px;
 }
 
@@ -355,7 +354,7 @@
 .slide.first blockquote {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 100px;
     text-align: right;
 }
 
@@ -373,7 +372,7 @@
 .slide.last blockquote {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 75px;
     text-align: right;
 }
 
@@ -413,6 +412,7 @@
     left: 0;
     bottom: 30px;
     width: 900px;
+    z-index: 20;
 }
 
 .slide .subtitle.right {
@@ -433,6 +433,7 @@
     left: 18px;
     position: absolute;
     top: 8px;
+    z-index: 20;
 }
 
 .slide .origin.bottom a {
@@ -531,7 +532,7 @@ aside.source {
 
 body {
     background-color: #CC00CC;
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 600, from(#fff), to(#666));
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 600, from(#fff), to(#26F));
     background-attachment: fixed;
     font: 14px 'Delius', cursive;
     margin: 0;
@@ -723,6 +724,30 @@ div.presentation > h1 {
     display: none;
 }
 
+div.inner > footer {
+    bottom: 20px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+div.inner > footer img {
+    float: left;
+    margin: 0 50px;
+}
+
+div.inner > footer img:last-child {
+    float:right;
+}
+
+div.inner > footer img.centralized-image {
+    position: absolute;
+    bottom: 20px;
+    left: 305px;
+}
+
 div.slide {
     -moz-border-radius-bottomleft: 20px;
     -moz-border-radius-bottomright: 20px;
@@ -736,12 +761,13 @@ div.slide {
     -webkit-border-top-right-radius: 20px;
     -webkit-transition: margin .25s ease-in-out;
     background: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
     /* background: -webkit-gradient(linear, left bottom, right top, from(#ddd), to(#fff)); */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.8);
     display: inline;
     height: 700px;
     left: 50%;
@@ -863,6 +889,7 @@ header:not(:only-child) {
 img {
     display: block;
     margin: auto;
+    z-index: 10;
 }
 
 li {
@@ -883,6 +910,7 @@ pre {
     padding: 10px;
     position: absolute;
     width: 750px;
+    z-index: 10;
 }
 
 section > pre:only-child {
