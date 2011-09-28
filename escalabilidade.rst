@@ -582,20 +582,94 @@ Avalie o quanto você precisa da sessão. Se você precisar muito, use a memóri
 Banco de dados
 ==============
 
+---------------
+
+Múltiplos bancos de dados
+=========================
+
+.fx: build-code
+
+.. sourcecode:: python
+
+    DATABASES = {
+        'master': {
+            'NAME': 'myproject_master',
+            'ENGINE': 'django.db.backends.mysql',
+            'USER': 'root',
+            'PASSWORD': ''
+        },
+        'slave': {
+            'NAME': 'myproject_slave',
+            'ENGINE': 'django.db.backends.mysql',
+            'USER': 'root',
+            'PASSWORD': ''
+        }
+    }
+
 Presenter Notes
 ===============
 
-bla
+Um recurso introduzido pela versão 1.2 do Django foi o suporte a múltiplos
+bancos de dados. Você pode utilizar um banco de dados para escrita e vários para
+leitura, por exemplo, ou coisas do tipo.
+
+---------------
+
+Database router
+===============
+
+.fx: build-code
+
+.. sourcecode:: python
+
+    class MyProjectRouter(object):
+
+        def db_for_read(self, model, **kwargs):
+            return 'slave'
+
+        def db_for_write(self, model, **kwargs):
+            return 'master'
+
+        def allow_relation(self, obj1, obj2, **kwargs):
+            db_list = ('master', 'slave')
+            if obj1._state.db in db_list and obj2._state.db in db_list:
+                return True
+            return None
+
+        def allow_syncdb(self, db, model):
+            return True
+
+Presenter Notes
+===============
+
+Você pode usar um router para um esquema de roteamento de escrita e leitura em um banco de dados
+ou ainda para coisas mais poderosas, como fazer shard do banco. Ou, quem sabe, combinar as duas
+coisas :)
+
+---------------
+
+NoSQL
+=====
+
+O Django não tem suporte nativo a bancos de dados não relacionais, mas existem soluções de terceiros...
+
+.. class:: build
+
+- `django-nonrel <http://www.allbuttonspressed.com/projects/django-nonrel>`_
+- Cassandra (`PyCassa <https://github.com/pycassa/pycassa>`_)
+- CouchDB (`CouchDB-Python <http://code.google.com/p/couchdb-python/>`_)
+- MongoDB (`Django MongoDB Engine <http://django-mongodb.org/>`_)
+
+Presenter Notes
+===============
+
+Mostrar http://www.pythonbrasil.org.br/2011/programacao/diaria/grade-do-evento/django/django-e-mongodb.
+Em NoSQL, existe uma promessa de suporte oficial por parte do ORM do Django, o que é uma péssima ideia :)
 
 ---------------
 
 Otimizando o código...
 ======================
-
-Presenter Notes
-===============
-
-bla!
 
 ---------------
 
