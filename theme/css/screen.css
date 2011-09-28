@@ -444,6 +444,10 @@
     bottom: 8px;
 }
 
+.slide .origin.white a {
+    color: #FFF;
+}
+
 .slide.current {
     display: block;
     margin-left: -450px;
