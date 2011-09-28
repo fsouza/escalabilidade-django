@@ -89,6 +89,40 @@ Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 ---------------
 
+.fx: big-code
+
+.. sourcecode:: text
+
+    % ab -rn 1000 -c 100 "http://0.0.0.0:8000/gravando?a=1"
+    Server Software:        WSGIServer/0.1
+    Server Hostname:        0.0.0.0
+    Server Port:            8080
+
+    Document Path:          /gravando?a=1
+    Document Length:        2 bytes
+
+    Concurrency Level:      100
+    Time taken for tests:   4.016 seconds
+    Complete requests:      1000
+    Failed requests:        625
+       (Connect: 0, Receive: 485, Length: 140, Exceptions: 0)
+    Write errors:           237
+    Total transferred:      116522 bytes
+    HTML transferred:       1726 bytes
+    Requests per second:    249.03 [#/sec] (mean)
+    Time per request:       401.550 [ms] (mean)
+    Time per request:       4.016 [ms] (mean, across all concurrent requests)
+    Transfer rate:          28.34 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:        0  182 572.0     13    3428
+    Processing:     0  102 412.8      0    3420
+    Waiting:        0    1   2.1      0      17
+    Total:          4  284 819.9     14    3439
+
+---------------
+
 Mito da escalabilidade
 ======================
 
@@ -110,6 +144,40 @@ Presenter Notes
 
 Escalabilidade não está relacionado à tecnologia. O mesmo código do slide anterior transcrito
 em uma linguagem estática. O código roda **MUITO** mais rápido, mas é tão escalável quanto o outro.
+
+---------------
+
+.fx: big-code
+
+.. sourcecode:: text
+
+    % ab -n 1000 -c 100 "http://localhost:9090/sss?a=1"
+    Server Software:
+    Server Hostname:        localhost
+    Server Port:            9090
+
+    Document Path:          /sss?a=1
+    Document Length:        2 bytes
+
+    Concurrency Level:      100
+    Time taken for tests:   0.531 seconds
+    Complete requests:      1000
+    Failed requests:        229
+       (Connect: 0, Receive: 228, Length: 1, Exceptions: 0)
+    Write errors:           52
+    Total transferred:      96624 bytes
+    HTML transferred:       1952 bytes
+    Requests per second:    1883.76 [#/sec] (mean)
+    Time per request:       53.085 [ms] (mean)
+    Time per request:       0.531 [ms] (mean, across all concurrent requests)
+    Transfer rate:          177.75 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:        3   49  14.5     52      70
+    Processing:     0    2   7.1      1      46
+    Waiting:        0    2   7.0      0      46
+    Total:          9   51  10.9     53      71
 
 ---------------
 
