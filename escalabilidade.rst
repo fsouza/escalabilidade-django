@@ -801,6 +801,21 @@ http://djangosnippets.org/snippets/186/
 
 ----------------
 
+Escalando (quase) sem dor
+=========================
+
+.. class:: build
+
+- `Heroku <http://www.heroku.com/>`_
+- `ep.io <http://ep.io>`_
+
+Presenter Notes
+===============
+
+Abrir http://blog.heroku.com/archives/2011/9/28/python_and_django/
+
+----------------
+
 Dúvidas?
 ========
 
