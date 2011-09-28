@@ -808,6 +808,7 @@ Escalando (quase) sem dor
 
 - `Heroku <http://www.heroku.com/>`_
 - `ep.io <http://ep.io>`_
+- `Gondor <http://gondor.io>`_
 
 Presenter Notes
 ===============
