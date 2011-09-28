@@ -1,0 +1,4 @@
+- http://g1.globo.com
+- http://cobrateam.info
+- http://www.pythonbrasil.org.br/2011/programacao/diaria/grade-do-evento/django/django-e-mongodb
+- http://blog.heroku.com/archives/2011/9/28/python_and_django/
