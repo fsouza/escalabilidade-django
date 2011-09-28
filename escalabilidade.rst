@@ -93,10 +93,41 @@ Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 .. sourcecode:: text
 
+    % ab -n 1 "http://0.0.0.0:8000/gravando?a=1"
+
+    [...]
+
+    Document Path:          /gravando?a=1
+    Document Length:        2 bytes
+
+    Concurrency Level:      1
+    Time taken for tests:   0.018 seconds
+    Complete requests:      1
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      135 bytes
+    HTML transferred:       2 bytes
+    Requests per second:    55.01 [#/sec] (mean)
+    Time per request:       18.178 [ms] (mean)
+    Time per request:       18.178 [ms] (mean, across all concurrent requests)
+    Transfer rate:          7.25 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:       17   17   0.0     17      17
+    Processing:     1    1   0.0      1       1
+    Waiting:        0    0   0.0      0       0
+    Total:         18   18   0.0     18      18
+
+---------------
+
+.fx: big-code
+
+.. sourcecode:: text
+
     % ab -rn 1000 -c 100 "http://0.0.0.0:8000/gravando?a=1"
-    Server Software:        WSGIServer/0.1
-    Server Hostname:        0.0.0.0
-    Server Port:            8080
+
+    [...]
 
     Document Path:          /gravando?a=1
     Document Length:        2 bytes
@@ -151,10 +182,41 @@ em uma linguagem estática. O código roda **MUITO** mais rápido, mas é tão e
 
 .. sourcecode:: text
 
-    % ab -n 1000 -c 100 "http://localhost:9090/sss?a=1"
-    Server Software:
-    Server Hostname:        localhost
-    Server Port:            9090
+    % ab -rn 1 "http://localhost:9090/sss?a=1"
+
+    [...]
+
+    Document Path:          /sss?a=1
+    Document Length:        2 bytes
+
+    Concurrency Level:      1
+    Time taken for tests:   0.001 seconds
+    Complete requests:      1
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      99 bytes
+    HTML transferred:       2 bytes
+    Requests per second:    1552.80 [#/sec] (mean)
+    Time per request:       0.644 [ms] (mean)
+    Time per request:       0.644 [ms] (mean, across all concurrent requests)
+    Transfer rate:          150.12 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:        1    1   0.0      1       1
+    Processing:     0    0   0.0      0       0
+    Waiting:        0    0   0.0      0       0
+    Total:          1    1   0.0      1       1
+
+---------------
+
+.fx: big-code
+
+.. sourcecode:: text
+
+    % ab -rn 1000 -c 100 "http://localhost:9090/sss?a=1"
+
+    [...]
 
     Document Path:          /sss?a=1
     Document Length:        2 bytes
