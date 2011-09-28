@@ -472,10 +472,6 @@ bla!
 .. image:: img/decide.jpg
    :class: full
 
-.. class:: subtitle right big
-
-Se decide!
-
 .. class:: origin bottom
 
 http://www.flickr.com/photos/josemanuelerre/5128402263/
@@ -596,6 +592,15 @@ Código da view
     def list_books(request):
         books = Book.objects.all()
         return TemplateResponse(request, "books_list.html", locals())
+
+----------------
+
+.. image:: img/fake.jpg
+   :class: full
+
+.. class:: origin white
+
+http://www.jonathanrick.com/wp-content/uploads/2009/07/Last-moonwalk-Apollo-17.jpg
 
 ----------------
 
