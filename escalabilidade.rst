@@ -761,13 +761,13 @@ Abrir http://blog.heroku.com/archives/2011/9/28/python_and_django/
 
 ----------------
 
-Dúvidas?
-========
+Obrigado!
+=========
+
+`github.com/fsouza/escalabilidade-django <http://github.com/fsouza/escalabilidade-django>`_
 
     Francisco Souza
 
-    `@franciscosouza <http://twitter.com/franciscosouza>`_
+    @franciscosouza
 
     f@souza.cc
-
-    `f.souza.cc <http://f.souza.cc>`_

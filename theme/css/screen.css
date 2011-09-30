@@ -371,19 +371,39 @@
 
 .slide.last blockquote {
     position: absolute;
-    right: 0;
-    bottom: 75px;
+    right: 25px;
+    bottom: 80px;
+}
+
+.slide.last blockquote > p {
     text-align: right;
 }
 
-.slide.last blockquote p {
-    font-size: 30px;
-}
-
-.slide.last blockquote p:first-child {
-    font-size: 45px;
+.slide.last blockquote > p:first-child {
+    color: #3f3f3f;
+    font-size: 40px;
     font-weight: bold;
     line-height: 30px;
+}
+
+.slide.last p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.slide.last p:first-child {
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 120px;
+}
+
+.slide.last p > a {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.slide.last p > a:hover {
+    background-color: #000;
+    color: #FFF;
 }
 
 .slide.quote blockquote {
