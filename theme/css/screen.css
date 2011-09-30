@@ -401,11 +401,6 @@
     text-decoration: none;
 }
 
-.slide.last p > a:hover {
-    background-color: #000;
-    color: #FFF;
-}
-
 .slide.quote blockquote {
     margin-top: -30px;
 }
