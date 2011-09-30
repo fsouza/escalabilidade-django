@@ -65,8 +65,8 @@ projetos open source, com diversos colaboradores.
 
 ---------------
 
-Mito da escalabilidade
-======================
+Mitos da escalabilidade
+=======================
 
 * Escalabilidade não é rodar rápido
 
@@ -89,73 +89,8 @@ Agora, o que acontece se eu receber 3000 requests simultâneos nessa view?
 
 ---------------
 
-.fx: big-code
-
-.. sourcecode:: text
-
-    % ab -n 1 "http://0.0.0.0:8000/gravando?a=1"
-
-    [...]
-
-    Document Path:          /gravando?a=1
-    Document Length:        2 bytes
-
-    Concurrency Level:      1
-    Time taken for tests:   0.018 seconds
-    Complete requests:      1
-    Failed requests:        0
-    Write errors:           0
-    Total transferred:      135 bytes
-    HTML transferred:       2 bytes
-    Requests per second:    55.01 [#/sec] (mean)
-    Time per request:       18.178 [ms] (mean)
-    Time per request:       18.178 [ms] (mean, across all concurrent requests)
-    Transfer rate:          7.25 [Kbytes/sec] received
-
-    Connection Times (ms)
-                  min  mean[+/-sd] median   max
-    Connect:       17   17   0.0     17      17
-    Processing:     1    1   0.0      1       1
-    Waiting:        0    0   0.0      0       0
-    Total:         18   18   0.0     18      18
-
----------------
-
-.fx: big-code
-
-.. sourcecode:: text
-
-    % ab -rn 1000 -c 100 "http://0.0.0.0:8000/gravando?a=1"
-
-    [...]
-
-    Document Path:          /gravando?a=1
-    Document Length:        2 bytes
-
-    Concurrency Level:      100
-    Time taken for tests:   4.016 seconds
-    Complete requests:      1000
-    Failed requests:        625
-       (Connect: 0, Receive: 485, Length: 140, Exceptions: 0)
-    Write errors:           237
-    Total transferred:      116522 bytes
-    HTML transferred:       1726 bytes
-    Requests per second:    249.03 [#/sec] (mean)
-    Time per request:       401.550 [ms] (mean)
-    Time per request:       4.016 [ms] (mean, across all concurrent requests)
-    Transfer rate:          28.34 [Kbytes/sec] received
-
-    Connection Times (ms)
-                  min  mean[+/-sd] median   max
-    Connect:        0  182 572.0     13    3428
-    Processing:     0  102 412.8      0    3420
-    Waiting:        0    1   2.1      0      17
-    Total:          4  284 819.9     14    3439
-
----------------
-
-Mito da escalabilidade
-======================
+Mitos da escalabilidade
+=======================
 
 * Escalabilidade é independente da tecnologia (linguagem, framework ,etc.)
 
@@ -175,71 +110,6 @@ Presenter Notes
 
 Escalabilidade não está relacionado à tecnologia. O mesmo código do slide anterior transcrito
 em uma linguagem estática. O código roda **MUITO** mais rápido, mas é tão escalável quanto o outro.
-
----------------
-
-.fx: big-code
-
-.. sourcecode:: text
-
-    % ab -rn 1 "http://localhost:9090/sss?a=1"
-
-    [...]
-
-    Document Path:          /sss?a=1
-    Document Length:        2 bytes
-
-    Concurrency Level:      1
-    Time taken for tests:   0.001 seconds
-    Complete requests:      1
-    Failed requests:        0
-    Write errors:           0
-    Total transferred:      99 bytes
-    HTML transferred:       2 bytes
-    Requests per second:    1552.80 [#/sec] (mean)
-    Time per request:       0.644 [ms] (mean)
-    Time per request:       0.644 [ms] (mean, across all concurrent requests)
-    Transfer rate:          150.12 [Kbytes/sec] received
-
-    Connection Times (ms)
-                  min  mean[+/-sd] median   max
-    Connect:        1    1   0.0      1       1
-    Processing:     0    0   0.0      0       0
-    Waiting:        0    0   0.0      0       0
-    Total:          1    1   0.0      1       1
-
----------------
-
-.fx: big-code
-
-.. sourcecode:: text
-
-    % ab -rn 1000 -c 100 "http://localhost:9090/sss?a=1"
-
-    [...]
-
-    Document Path:          /sss?a=1
-    Document Length:        2 bytes
-
-    Concurrency Level:      100
-    Time taken for tests:   0.531 seconds
-    Complete requests:      1000
-    Failed requests:        229
-       (Connect: 0, Receive: 228, Length: 1, Exceptions: 0)
-    Write errors:           52
-    Total transferred:      96624 bytes
-    HTML transferred:       1952 bytes
-    Requests per second:    1883.76 [#/sec] (mean)
-    Time per request:       53.085 [ms] (mean)
-    Time per request:       0.531 [ms] (mean, across all concurrent requests)
-    Transfer rate:          177.75 [Kbytes/sec] received
-
-    Connection Times (ms)
-                  min  mean[+/-sd] median   max
-    Connect:        3   49  14.5     52      70
-    Processing:     0    2   7.1      1      46
-    Waiting:        0    2   7.0      0      46
-    Total:          9   51  10.9     53      71
 
 ---------------
 
